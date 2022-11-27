@@ -7,7 +7,7 @@ import postcssImport from 'postcss-import';
 import rollupGitVersion from 'rollup-plugin-git-version';
 
 let plugin = require('../package.json');
-let plugin_name = plugin.name.replace("@raruto/", "");
+let plugin_name = plugin.name.replace("@kostassite/", "");
 
 let input = plugin.module;
 let output = {
