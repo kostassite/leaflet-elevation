@@ -344,7 +344,8 @@ export const Elevation = L.Control.Elevation = L.Control.extend({
 
 			// GARMIN_EXTENSIONS = ["hr", "cad", "atemp", "wtemp", "depth", "course", "bearing"];
 			point.meta = point.meta ?? { time: null, ele: null };
-			
+			point.speed = props.speeds?.[i]
+
 			point.prev = (attr) => (attr ? this._data[i > 0 ? i - 1 : 0][attr] : this._data[i > 0 ? i - 1 : 0]);
 
 			this.fire("elepoint_init", { point: point, props: props, id: i, isMulti: nestingLevel });
