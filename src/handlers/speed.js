@@ -16,7 +16,7 @@ export function Speed() {
 		clampRange: this.options.speedRange,
 		decimals: this.options.speedDecimals ?? 2,
 		pointToAttr: (point, i) => {
-			if (point.speed) return point.speed * opts.speedFactor;
+			if (point.speed !== undefined) return point.speed * opts.speedFactor;
 			let dx   = (this._data[i].dist - this._data[i > 0 ? i - 1 : i].dist) * 1000;
 			let dt   = this._data[i].time - this._data[ i > 0 ? i - 1 : i].time;
 			return dt > 0 ? Math.abs((dx / dt) * opts.timeFactor) * opts.speedFactor : 0;
