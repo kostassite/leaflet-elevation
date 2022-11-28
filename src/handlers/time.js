@@ -84,12 +84,12 @@ export function Time() {
 			(this.options.time) && {
 				name: 'time',
 				chart: (item) => L._("T: ") + _.formatTime(item.duration || 0),
-				order: 20
+				order: this.options.timeOrder ?? 20
 			},
 			(this.options.timestamps) && {
 				name: 'date',
 				chart: (item) => L._("t: ") + this.options.timeFormat(item.time),
-				order: 21,
+				order: this.options.timestampsOrder ?? 21,
 			}
 		],
 		summary: (this.options.time) && {
