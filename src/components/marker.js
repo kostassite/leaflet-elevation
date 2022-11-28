@@ -56,6 +56,10 @@ export var Marker = L.Class.extend({
 
 					if(!isFinite(yMax) || isNaN(yMax)) yMax = 0;
 
+					if (this.options.markerYMax !== undefined) {
+						yMax = this.options.markerYMax
+					}
+
 					this._container.classed("leaflet-hidden", false);
 					this._container.call(D3.PositionMarker({
 						theme : this.options.theme,
