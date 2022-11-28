@@ -89,6 +89,7 @@ export function Time() {
 			(this.options.timestamps) && {
 				name: 'date',
 				chart: (item) => L._("t: ") + this.options.timeFormat(item.time),
+				marker: (item) => this.options.timeFormat(item.time),
 				order: this.options.timestampsOrder ?? 21,
 			}
 		],
